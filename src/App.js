@@ -18,7 +18,7 @@ import Adventures from "./Adventures";
 import LandingPage from "./Landing";
 import LoginPage from "./Login";
 import Layout from "./Layout";
-import LuxuryApp from "./Luxury";
+
 const App = () => {
   return (
     <Fragment>
@@ -46,6 +46,7 @@ const App = () => {
             <Route path="/historical" element={<History />} />
             <Route path="/adventures" element={<Adventures />} />
             <Route path="/luxuary" element={<Luxuary/>} />
+         
           </Route>
 
         </Routes>

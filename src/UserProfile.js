@@ -11,11 +11,13 @@ import {
 // 1️⃣ IMPORT GOOGLE AI SDK
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './UserProfile.css';
+import { useNavigate } from 'react-router-dom';
 
 const UserProfile = () => {
+  const navigate = useNavigate();
   // --- 🌍 GOOGLE MAPS CONFIG ---
   // 🔴 NOTE: For production, use process.env.REACT_APP_GOOGLE_API_KEY
-  const GOOGLE_MAPS_API_KEY = "AIzaSyDZSfFnr4tEUzWMkdPNjDIAtOL2cDM3bzI"; 
+  const GOOGLE_MAPS_API_KEY = process.env.Google_MAP_API_Key  
   const defaultCenter = { lat: 28.6139, lng: 77.2090 }; // New Delhi
 
   const { isLoaded } = useJsApiLoader({
@@ -86,7 +88,7 @@ const UserProfile = () => {
 
     try {
       // 2. Initialize Gemini (Directly in Frontend)
-      const genAI = new GoogleGenerativeAI("AIzaSyDVioyL7U2zi3bZz9zs6NX7NLkPXnrB7sE"); // Reusing your API key
+      const genAI = new GoogleGenerativeAI(process.env.Google_AI_API_Key); // Reusing your API key
       const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
       // 3. Send Request to Google
@@ -108,7 +110,7 @@ const UserProfile = () => {
 
   // --- 👤 MOCK DATA ---
   const user = {
-    name: "Rahul Verma",
+    name: "Nithin",
     role: "Premium Traveler",
     image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
   };
@@ -154,8 +156,8 @@ const UserProfile = () => {
             </div>
         </div>
 
-        <button className="signout-btn">
-            <FaSignOutAlt /> Sign Out
+        <button onClick={()=>{navigate('/')}} className="signout-btn">
+            <FaSignOutAlt  /> Sign Out
         </button>
       </aside>
 
