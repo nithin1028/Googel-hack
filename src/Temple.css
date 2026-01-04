@@ -1,0 +1,463 @@
+/* --- Google Font Import (Place this in your index.css or HTML head if possible, otherwise it works here) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- SCOPED RESET & WRAPPER --- */
+.temple-body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #1e293b;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.temple-body * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- 1. HERO SECTION --- */
+.temple-body .hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    padding: 20px;
+    background: #000;
+    overflow: hidden;
+}
+
+.temple-body .hero-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.temple-body .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomSlow 20s infinite alternate;
+}
+
+.temple-body .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+    z-index: 2;
+}
+
+.temple-body .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    color: #fff;
+    padding: 20px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.temple-body .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.temple-body .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* --- 2. SECTIONS & TITLES --- */
+.temple-body .category-section,
+.temple-body .policy-section {
+    padding: 60px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.temple-body .section-title {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.temple-body .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #2563eb;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- 3. CARD GRID SYSTEM (CSS GRID) --- */
+.temple-body .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+    cursor: pointer; /* Specifically for the navigate onClick */
+}
+
+/* --- 4. TRAVEL CARD STYLING --- */
+.temple-body .travel-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.temple-body .travel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+}
+
+.temple-body .img-container {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.temple-body .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.temple-body .travel-card:hover .img-container img {
+    transform: scale(1.1);
+}
+
+.temple-body .card-details {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.temple-body .card-details h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.temple-body .card-details .price {
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.temple-body .card-details .duration {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.temple-body .book-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.temple-body .book-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
+
+/* --- 5. POLICY SECTION --- */
+.temple-body .policy-section {
+    background: #f1f5f9;
+    margin-bottom: 0; /* Connects to footer */
+}
+
+.temple-body .policy-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.temple-body .policy-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border-left: 4px solid #2563eb;
+    transition: transform 0.3s ease;
+}
+
+.temple-body .policy-card:hover {
+    transform: translateY(-5px);
+}
+
+.temple-body .policy-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #0f172a;
+}
+
+.temple-body .policy-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- 6. FOOTER STYLING --- */
+.temple-body .primoris-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 80px 5% 30px;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 10;
+}
+
+.temple-body .footer-heading {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 3px solid #38bdf8;
+    padding-left: 10px;
+}
+
+.temple-body .footer-divider {
+    border: 0;
+    border-top: 1px solid #334155;
+    margin: 40px 0;
+}
+
+/* Footer Section 1: Link Tags */
+.temple-body .link-tags {
+    line-height: 2;
+    text-align: center;
+}
+
+.temple-body .link-tags span {
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.temple-body .link-tags span:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+/* Footer Section 2: Partners Grid */
+.temple-body .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.temple-body .partner-category h5 {
+    color: #e2e8f0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.temple-body .partner-category p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* Footer Section 3: Policy Text */
+.temple-body .footer-policy-section {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid #ef4444;
+}
+
+.temple-body .policy-text {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+.temple-body .policy-text strong {
+    color: white;
+}
+
+.temple-body .policy-warning {
+    margin-top: 15px;
+    color: #fca5a5;
+    font-weight: 600;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Footer Section 4: Brand & Payment */
+.temple-body .footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.temple-body .brand-logo {
+    font-size: 2rem;
+    color: white;
+    font-weight: 800;
+}
+
+.temple-body .brand-logo span {
+    color: #38bdf8;
+}
+
+/* Social Icons */
+.temple-body .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.temple-body .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #334155;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.temple-body .social-icon:hover {
+    transform: translateY(-5px);
+}
+
+/* Specific Social Colors */
+.temple-body .social-icon.fb:hover { background: #1877f2; }
+.temple-body .social-icon.tw:hover { background: #1da1f2; }
+.temple-body .social-icon.ig:hover { background: #e4405f; }
+.temple-body .social-icon.li:hover { background: #0077b5; }
+.temple-body .social-icon.yt:hover { background: #ff0000; }
+
+/* Payment Icons */
+.temple-body .footer-payment-column {
+    text-align: right;
+    flex: 1;
+    min-width: 300px;
+}
+
+.temple-body .payment-icons {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 2rem;
+    margin: 15px 0;
+    color: #cbd5e1;
+}
+
+.temple-body .secure-text {
+    color: #10b981;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.temple-body .footer-copyright {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomSlow {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .temple-body .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .temple-body .footer-main {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .temple-body .footer-payment-column {
+        text-align: left;
+    }
+
+    .temple-body .payment-icons {
+        justify-content: flex-start;
+    }
+
+    .temple-body .footer-copyright {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+}

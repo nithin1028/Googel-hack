@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.travel-container {
+  background: #fff;
+  padding: 50px;
+}
+
+.main-title {
+  font-size: 44px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.sub-title {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* VEHICLE GRID */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.vehicle-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-12px) scale(1.04);
+}
+
+.vehicle-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.vehicle-card h3 {
+  padding: 15px;
+  font-size: 18px;
+}
+
+.vehicle-card p {
+  padding: 0 15px;
+  color: #007bff;
+}
+
+.vehicle-card button {
+  margin: 15px;
+  width: calc(100% - 30px);
+  padding: 10px;
+  border: none;
+  background: #0077ff;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* LUXURY SECTION */
+.luxury-section {
+  display: flex;
+  gap: 40px;
+}
+
+.luxury-left {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.luxury-card {
+  background: #fefefe;
+  color: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.luxury-card:hover {
+  transform: scale(1.06);
+}
+
+.luxury-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.luxury-card h3 {
+  padding: 15px;
+}
+
+.luxury-card p {
+  padding: 0 15px;
+  color: rgb(233, 206, 58);
+}
+
+.luxury-card button {
+  margin: 15px;
+  padding: 10px 18px;
+  border: none;
+  background: #0077ff;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+/* RIGHT SIDE */
+.luxury-right {
+  width: 50%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.luxury-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer-box {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  border-radius: 18px;
+  animation: fadeUp 1s ease;
+}
+
+.offer-box span {
+  color: #e63946;
+  font-weight: 700;
+}
+
+.offer-box button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #000;
+  color: #fff;
+  border-radius: 25px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* --- Footer Base --- */
+.primoris-footer {
+    background-color: #0f172a; /* Deep Navy/Black Theme */
+    color: #94a3b8; /* Soft Grey Text */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 40px;
+}
+
+.footer-heading {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 3px solid #38bdf8; /* Brand accent */
+    padding-left: 10px;
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #334155;
+    margin: 30px 0;
+}
+
+/* --- Section 1: Most Searched --- */
+.link-tags {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+.link-tags span {
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin: 0 4px;
+    white-space: nowrap; /* Prevent breaking individual tags */
+}
+
+.link-tags span:hover {
+    color: #38bdf8; /* Bright Blue Hover */
+    text-decoration: underline;
+}
+
+/* --- Section 2: Global Partners --- */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.partner-category h5 {
+    color: #e2e8f0;
+    font-size: 15px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.partner-category p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* --- Section 3: Policy Section (Specific Styling) --- */
+.footer-policy-section {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #ef4444; /* Red warning border */
+    margin-bottom: 40px;
+}
+
+.policy-content p {
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.policy-content strong {
+    color: #ffffff;
+}
+
+.policy-warning {
+    margin-top: 15px;
+    color: #fca5a5; /* Light Red */
+    font-weight: 600;
+    font-style: italic;
+    background: rgba(239, 68, 68, 0.1); /* Subtle red bg */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* --- Section 4: Main Footer (Brand & Payments) --- */
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.footer-brand-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.brand-logo {
+    font-size: 32px;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.brand-logo span {
+    color: #38bdf8;
+}
+
+/* Vehicle Icons Row */
+.vehicle-icons-row {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #64748b;
+}
+
+.vehicle-icons-row span:hover {
+    color: #38bdf8;
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+
+/* Social Icons */
+.social-media-wrapper {
+    margin-top: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: #334155;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.fb:hover { background: #1877f2; }
+.tw:hover { background: #1da1f2; }
+.ig:hover { background: #e4405f; }
+.li:hover { background: #0077b5; }
+.yt:hover { background: #ff0000; }
+
+/* Payment Icons */
+.footer-payment-column {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+}
+
+.footer-payment-column h4 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 32px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.payment-icons svg {
+    transition: color 0.3s, transform 0.2s;
+    cursor: pointer;
+    background: #1e293b;
+    padding: 5px;
+    border-radius: 4px;
+    width: 45px;
+    height: auto;
+}
+
+.payment-icons svg:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    background: #334155;
+}
+
+.secure-text {
+    font-size: 12px;
+    color: #10b981; /* Green for security */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+/* --- Copyright --- */
+.footer-copyright {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #334155;
+    padding-top: 25px;
+    font-size: 13px;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+    }
+    
+    .footer-payment-column {
+        text-align: left;
+    }
+
+    .payment-icons {
+        justify-content: flex-start;
+    }
+
+    .secure-text {
+        justify-content: flex-start;
+    }
+
+    .footer-copyright {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}

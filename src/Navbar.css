@@ -1,0 +1,127 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.navbar-container {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+   position: sticky;
+}
+
+/* ================= TOP NAVBAR ================= */
+.navbar-top {
+  max-width: 1300px;          /* keeps layout centered */
+  margin: 0 auto;
+  padding: 14px 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+/* ===== LOGO (LEFT) ===== */
+.navbar-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  color: rgb(63, 63, 228);
+}
+
+.navbar-logo img {
+  height: 100px;              /* HD logo size */
+  width: 300px;               /* preserve aspect ratio */
+  object-fit: contain;
+}
+
+/* ===== SEARCH (CENTER) ===== */
+.navbar-search {
+  flex: 1;                   /* takes middle space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 500px;
+  margin: 0 auto;
+
+  background-color: #f1f3f5;
+  padding: 10px 18px;
+  border-radius: 30px;
+}
+
+.navbar-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.search-icon {
+  color: #666;
+  font-size: 16px;
+}
+
+/* ===== PROFILE (RIGHT) ===== */
+.navbar-profile {
+  flex: 0 0 auto;
+  margin-left: auto;         /* push to extreme right */
+  font-size: 34px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* ================= BOTTOM NAVBAR ================= */
+.navbar-bottom {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 12px 0;
+ 
+}
+
+/* ===== NAV LINKS ===== */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0077ff;
+}
+/* ===== ACTIVE PAGE INDICATOR (NO COLOR CHANGE) ===== */
+.nav-link.active {
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  color: #0077ff;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: currentColor; /* uses SAME color */
+}
+.nav-link.active::after{
+  color: #0077ff;
+}

@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- Reset & Base --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* --- Layout Utilities --- */
+.beach-page-wrapper {
+  width: 100%;
+}
+
+.main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-section {
+  padding: 80px 0;
+}
+
+.bg-soft {
+  background-color: #f1f5f9;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-left: max(20px, calc(50vw - 640px));
+  padding-right: max(20px, calc(50vw - 640px));
+}
+
+/* --- Typography --- */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+/* --- Hero Section --- */
+.hero-header {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  animation: zoomSlow 20s infinite alternate;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #38bdf8;
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  color: rgb(0, 9, 9);
+  font-weight: bold;
+}
+
+.cta-button {
+  padding: 16px 40px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.primary-cta {
+  background: #38bdf8;
+  color: #0f172a;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+}
+
+.primary-cta:hover {
+  background: #0ea5e9;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.5);
+}
+
+/* --- Card Grids --- */
+.card-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+}
+
+.card-grid-4-dense {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* --- Travel Card (Standard) --- */
+.travel-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-image-wrapper {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.travel-card:hover .card-image-wrapper img {
+  transform: scale(1.1);
+}
+
+.rating-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f59e0b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 15px;
+}
+
+.price-tag {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #2563eb;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-card:hover .btn-icon {
+  background: #2563eb;
+  color: white;
+}
+
+/* --- Combo Card (Wide) --- */
+.combo-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.combo-image {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.combo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.hover-scale:hover .combo-image img {
+  transform: scale(1.05);
+}
+
+.promo-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.combo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+.combo-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.combo-details {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-block .label {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.price-block .price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.btn-book {
+  padding: 12px 30px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-book:hover {
+  background: #2563eb;
+}
+
+/* --- Mini Card (Dense Grid) --- */
+.mini-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  transition: all 0.3s;
+}
+
+.hover-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+}
+
+.mini-img {
+  height: 160px;
+  overflow: hidden;
+}
+
+.mini-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-content {
+  padding: 15px;
+}
+
+.mini-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.mini-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.mini-price {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.book-link {
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.book-link:hover {
+  color: #2563eb;
+}
+
+/* --- Footer --- */
+.primoris-footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 80px 0 30px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.policy-row h4, .footer-col h5 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.policy-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footer-divider {
+  border-top: 1px solid #334155;
+  margin: 40px 0;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-list li:hover {
+  color: #38bdf8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.2rem;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-icons svg:hover {
+  color: white;
+}
+
+.payment-icons span {
+  display: inline-block;
+  background: #1e293b;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  margin-right: 8px;
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* --- Animations --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomSlow {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.fade-in-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .card-grid-2 { grid-template-columns: 1fr; }
+  .footer-row { flex-direction: column; }
+}

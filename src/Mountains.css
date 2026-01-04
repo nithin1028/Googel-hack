@@ -1,0 +1,359 @@
+/* --- Global & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+.travelmount-app-container {
+  font-family: 'Montserrat', sans-serif;
+  color: #2d3436;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+/* --- Utilities --- */
+.travelmount-bg-light {
+  background-color: #f8f9fa;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* --- Hero Section --- */
+.travelmount-hero {
+  padding: 40px 5%;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  margin-bottom: 40px;
+}
+
+.travelmount-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.travelmount-hero-text {
+  flex: 1;
+}
+
+.travelmount-hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.travelmount-hero-text p {
+  font-size: 1.1rem;
+  color: #636e72;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.travelmount-hero-image-box {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: rotate(2deg);
+}
+
+.travelmount-hero-image-box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --- Section Headers --- */
+.travelmount-section {
+  max-width: 1280px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+}
+
+.travelmount-section-header {
+  margin-bottom: 30px;
+  padding-left: 15px;
+  border-left: 5px solid #0984e3;
+}
+
+.travelmount-section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 5px;
+}
+
+.travelmount-section-header p {
+  color: #7f8c8d;
+}
+
+/* --- Grid System --- */
+.travelmount-grid {
+  display: grid;
+  /* Automatically fits columns: min 260px wide, max fits available space */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* --- Card Styles --- */
+.travelmount-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Ensures uniform height in grid */
+}
+
+.travelmount-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* Image Area */
+.travelmount-card-img {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.travelmount-card-img.small {
+  height: 160px;
+}
+
+.travelmount-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.travelmount-card:hover .travelmount-card-img img {
+  transform: scale(1.1);
+}
+
+/* Badges & Ratings */
+.travelmount-rating {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255,255,255,0.9);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.travelmount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #0984e3;
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Card Body */
+.travelmount-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes footer to bottom */
+}
+
+.travelmount-card-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.travelmount-desc, .travelmount-sub {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.travelmount-flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Footer & Prices */
+.travelmount-card-footer {
+  margin-top: auto; /* Aligns to bottom of flex container */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #f1f2f6;
+}
+
+.travelmount-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.travelmount-price-lg {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0984e3;
+}
+
+.travelmount-price-sm {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+/* --- Buttons --- */
+.travelmount-btn-primary {
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.travelmount-btn-primary:hover {
+  background-color: #076cb8;
+}
+
+.travelmount-btn-outline {
+  background: transparent;
+  color: #0984e3;
+  border: 2px solid #0984e3;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.travelmount-btn-outline:hover {
+  background: #0984e3;
+  color: white;
+}
+
+.travelmount-btn-full {
+  width: 100%;
+  background-color: #4540e9;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.travelmount-btn-full:hover {
+  background-color: #1a252f;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .travelmount-hero-content {
+    flex-direction: column-reverse;
+  }
+  .travelmount-hero-text {
+    text-align: center;
+  }
+  .travelmount-hero-image-box {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+.footer {
+  background: #0f172a; /* deep premium navy */
+  color: #e5e7eb;
+  padding: 60px 80px 30px;
+  margin-top: 80px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.footer-section {
+  margin-bottom: 35px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5f5;
+}
+
+.footer-links {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* BOTTOM AREA */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #1e293b;
+  padding-top: 25px;
+  margin-top: 30px;
+}
+
+.payments p {
+  color: #cbd5f5;
+  font-size: 14px;
+}
+
+.social h4 {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.social-icons svg {
+  transition: transform 0.3s ease;
+}
+
+.social-icons svg:hover {
+  transform: scale(1.2);
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 30px;
+  border-top: 1px solid #1e293b;
+  padding-top: 15px;
+}

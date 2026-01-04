@@ -1,0 +1,392 @@
+/* ================= APP ================= */
+.cities-app {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+}
+
+/* ================= HERO ================= */
+.cities-hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.cities-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  animation: citiesZoom 20s ease-in-out infinite alternate;
+}
+
+.cities-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  animation: citiesFadeUp 1.3s ease;
+}
+
+.cities-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cities-hero-content p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* ================= SECTION ================= */
+.cities-section {
+  padding: 80px 6%;
+}
+
+.cities-title {
+  font-size: 34px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ================= CITY ROW ================= */
+.cities-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+}
+
+/* ================= CITY CARD ================= */
+.cities-card {
+  position: relative;
+  height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.cities-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cities-card:hover img {
+  transform: scale(1.15);
+}
+
+.cities-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 40px 70px rgba(0,0,0,0.25);
+}
+
+/* ================= OVERLAY ================= */
+.cities-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.1)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: #fff;
+}
+
+.cities-card-overlay h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.cities-card-overlay span {
+  font-size: 16px;
+  font-weight: 600;
+  color: gold;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes citiesFadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes citiesZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .cities-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .cities-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cities-hero-content h1 {
+    font-size: 34px;
+  }
+}
+
+
+
+
+/* ================= COMMON ================= */
+.cities-heading {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+  animation: citiesFadeUp 1s ease;
+}
+
+/* ================= NEAR BY YOU ================= */
+.cities-nearby {
+  padding: 90px 6%;
+  background: #f8fafc;
+}
+
+.cities-nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.cities-nearby-card {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.cities-nearby-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.cities-nearby-card:hover {
+  transform: scale(1.08) translateY(-10px);
+  box-shadow: 0 45px 80px rgba(0,0,0,0.35);
+}
+
+.cities-off {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: gold;
+  color: #111;
+  padding: 6px 14px;
+  font-weight: 700;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.cities-nearby-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  z-index: 2;
+}
+
+.cities-nearby-info h3 {
+  font-size: 22px;
+}
+
+/* ================= VISIT ================= */
+.cities-visit {
+  padding: 90px 6%;
+}
+
+.cities-visit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+.cities-visit-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+
+.cities-visit-card:hover {
+  transform: translateY(-12px);
+}
+
+.cities-visit-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cities-visit-card:hover img {
+  transform: scale(1.12);
+}
+
+.cities-visit-info {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cities-visit-info span {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes citiesFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .cities-nearby-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cities-nearby-grid,
+  .cities-visit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ================= FOOTER ================= */
+.cities-footer {
+  background: linear-gradient(135deg, #0b0b0b, #111);
+  color: #e5e7eb;
+  padding: 80px 6% 40px;
+  margin-top: 120px;
+  animation: citiesFooterFade 1.2s ease;
+}
+
+/* ================= GRID ================= */
+.cities-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+/* ================= COLUMN ================= */
+.cities-footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: gold;
+}
+
+.cities-footer-col p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #cbd5f5;
+}
+
+/* ================= PARTNERS ================= */
+.cities-footer-partners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cities-footer-partners span {
+  background: rgba(255,255,255,0.08);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.cities-footer-partners span:hover {
+  transform: scale(1.1);
+  background: gold;
+  color: #111;
+}
+
+/* ================= WARNING ================= */
+.cities-footer-warning {
+  margin-top: 14px;
+  color: #fbbf24;
+  font-weight: 500;
+}
+
+/* ================= BOTTOM ================= */
+.cities-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 50px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes citiesFooterFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .cities-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cities-footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+

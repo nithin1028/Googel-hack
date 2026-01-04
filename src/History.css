@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.hist-app-container {
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* HERO SECTION */
+.hist-hero-wrapper {
+  position: relative;
+  min-height: 90vh;
+  background: url('https://wallpapers.com/images/hd/historical-background-1920-x-1080-qi9wk9tzgz7ggt03.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  color: #ffffff;
+}
+
+.hist-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.4));
+}
+
+.hist-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hist-hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hist-hero-text h1 .hist-highlight { color: #2563eb; }
+
+.hist-hero-description {
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 35px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.hist-category-badge {
+  background: rgba(37, 99, 235, 0.2);
+  color: #2563eb;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 20px;
+  border: 1px solid #2563eb;
+}
+
+/* SECTIONS */
+.hist-main-section {
+  max-width: 1300px;
+  margin: 100px auto;
+  padding: 0 24px;
+}
+
+.hist-section-header {
+  margin-bottom: 50px;
+}
+
+.hist-section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+}
+
+.hist-accent-line {
+  width: 80px;
+  height: 4px;
+  background: #2563eb;
+  margin-top: 10px;
+}
+
+/* GRID */
+.hist-grid-four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* CARDS */
+.hist-content-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hist-content-card:hover { transform: translateY(-15px); }
+
+.hist-card-image-wrapper {
+  position: relative;
+  height: 240px;
+}
+
+.hist-card-main-img { width: 100%; height: 100%; object-fit: cover; }
+
+.hist-card-price-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: #ffffff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  color: #0f172a;
+}
+
+.hist-card-content-body { padding: 25px; }
+.hist-card-title { margin-bottom: 10px; font-size: 1.4rem; }
+.hist-card-desc-text { font-size: 0.9rem; color: #475569; line-height: 1.5; height: 4.5em; overflow: hidden; }
+
+.hist-card-rating-value { color: #f59e0b; font-weight: 700; }
+
+/* MID BANNER */
+.hist-mid-banner-cta {
+  height: 300px;
+  background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(37, 99, 235, 0.8)), url('https://c4.wallpaperflare.com/wallpaper/219/894/458/5bd329b2b5293-wallpaper-preview.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hist-banner-title { font-family: "Playfair Display", serif; font-size: 3rem; }
+
+/* TRENDING GRID */
+.hist-grid-trending-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hist-trending-card {
+  position: relative;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.hist-trending-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.hist-trending-card:hover .hist-trending-img { transform: scale(1.1); }
+
+.hist-trending-info-overlay {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: #ffffff;
+}
+
+.hist-trending-meta-row { display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 5px; }
+
+/* BUTTONS */
+.hist-btn-primary {
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+  text-align: center;
+}
+
+.hist-btn-plane { background: #2563eb; color: #ffffff; }
+.hist-btn-plane:hover { background: #0f172a; transform: scale(1.05); }
+
+.hist-btn-outline {
+  background: transparent;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.hist-btn-outline:hover { background: #2563eb; color: #ffffff; }
+
+/* FOOTER */
+.hist-footer-wrapper {
+  padding: 50px;
+  text-align: center;
+  background: #0f172a;
+  color: #64748b;
+  margin-top: 100px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .hist-grid-four-columns, 
+  .hist-grid-trending-layout { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .hist-hero-text h1 { 
+    font-size: 3.5rem; 
+  }
+  .hist-hero-description { 
+    margin: 0 auto 30px; 
+    max-width: 100%; 
+  }
+  .hist-hero-wrapper { 
+    text-align: center; 
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hist-grid-four-columns, 
+  .hist-grid-trending-layout { 
+    grid-template-columns: 1fr; 
+  }
+  .hist-hero-text h1 { 
+    font-size: 2.5rem; 
+  }
+}
